@@ -12,7 +12,11 @@ function App() {
 
     const link = `${appNameParam}://${appPathParam}`;
     setDeepLink(link);
+
   }, []);
+  useEffect(() => {
+    handleOpenLink()
+  },[deepLink])
 
   const handleOpenLink = () => {
     // 创建一个隐藏的 a 元素
@@ -33,8 +37,7 @@ function App() {
   return (
     <>
       {deepLink}
-      <button onClick={handleOpenLink}>打开链接</button>
-      <p>这会模拟用户点击以打开链接。</p>
+      <button onClick={handleOpenLink}>Open in App</button>
     </>
   );
 }
