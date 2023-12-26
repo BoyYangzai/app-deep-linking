@@ -14,9 +14,6 @@ function App() {
     setDeepLink(link);
 
   }, []);
-  useEffect(() => {
-    handleOpenLink()
-  },[deepLink])
 
   const handleOpenLink = () => {
     // 创建一个隐藏的 a 元素
